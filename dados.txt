@@ -1,0 +1,18 @@
+Funcionario
+Bruna
+30.192.293.201-2
+coxinha
+
+Cliente
+Ana
+30.192.1968.2-3019
+kaskaveu
+1
+1/500
+431.25
+691.19
+
+Administrador
+Marlon Henry
+30.19285.2918-2093
+beterraba
