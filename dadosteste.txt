@@ -1,18 +1,18 @@
+Administrador
+Marlon Henry
+30.19285.2918-2093
+beterraba
+ 
 Funcionario
 Bruna
 30.192.293.201-2
 coxinha
-
+ 
 Cliente
-Leticia
+Ana
 30.192.1968.2-3019
-teste
+kaskaveu
 1
 1/500
 431.25
 691.19
-
-Administrador
-MarlonHenry
-30.19285.2918-2093
-beterraba
