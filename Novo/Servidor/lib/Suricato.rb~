@@ -1,0 +1,148 @@
+require 'socket'
+require 'thread'
+require 'timeout'
+
+# Made with love <3 by:
+#                       Marlon Henry Schweigert
+
+module Fleyhe
+
+    module Network
+    
+        class Listener
+            
+            def initialize port=3030,event=Event
+                # Config the event
+                @event = event
+                @event.generateHash
+                
+                
+                # Config the TCPServer
+                @tcp = TCPServer.new port
+                
+                #Config the thread for working
+                @thread = Thread.new {
+                    self.work
+                }
+            end
+            
+            def close
+                @thread.kill
+                @tcp.close
+            end
+            
+            protected
+            def work
+                loop {
+                    Bridge.new(@tcp.accept, @event)
+                }
+            end
+            
+            
+            
+        end
+        
+        class Bridge
+        
+            def initialize tcp, event=Event
+                @tcp = tcp
+                @event = event
+                @thread = Thread.new {
+                    self.work
+                }
+            end
+            
+            def close
+                # Close your work
+                @tcp.close
+                @thread.kill
+            end
+            
+            def call event="Event",args=[]
+                @tcp.puts event.to_s
+                @tcp.puts args.size.to_s
+                
+                for i in args
+                    @tcp.puts i.to_s
+                end
+                
+            end
+            
+            def read
+                event = nil
+                args = []
+                
+                event = @tcp.gets.to_s.chomp
+                n = @tcp.gets.to_i
+                
+                n.times do
+                    args << @tcp.gets.to_s
+                end
+                
+                return event,args
+                
+                
+            end
+            
+            protected
+            def work
+            
+               begin
+                    loop {
+                        event = nil
+                        args = []
+                        
+                        Timeout.timeout(10) {event, args = self.read}
+                        
+                        @event.getHash[event.to_s.chomp].new(self,args)
+                        
+                    }    
+               rescue => e
+                    puts "Error on Bridge: #{ self.to_s }"
+                    puts " \t #{ e.to_s }"
+                    self.close
+               end
+               
+            end
+            
+        
+        end
+        
+        class Event
+        
+            def initialize bridge, args
+                
+                @bridge = bridge
+                @args = args
+                @event = nil
+                @form = []
+                
+                self.solve
+                
+                unless @event == nil
+                    @bridge.call(@event, @form)
+                end
+                
+            end
+            
+            def solve
+                puts "Noting here..."
+            end
+            
+            def self.generateHash
+                @@hash = Hash.new
+		        obj = ObjectSpace.each_object(Class).select { |klass| klass < self }
+		        for i in obj
+		                @@hash[i.to_s] = i
+		        end
+            end
+            
+            def self.getHash
+                return @@hash
+            end
+        
+        end
+        
+    end
+
+end

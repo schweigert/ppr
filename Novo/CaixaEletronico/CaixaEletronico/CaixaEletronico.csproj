@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A8F16F0-96B7-464E-8C2C-DF16E92B9F73}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CaixaEletronico</RootNamespace>
+    <AssemblyName>CaixaEletronico</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication.cs" />
+    <Compile Include="TelaAlterarConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaAlterarConta.Designer.cs">
+      <DependentUpon>TelaAlterarConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaAlterarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaAlterarFuncionario.Designer.cs">
+      <DependentUpon>TelaAlterarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaBoleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaBoleto.Designer.cs">
+      <DependentUpon>TelaBoleto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaDeposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaDeposito.Designer.cs">
+      <DependentUpon>TelaDeposito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaExibirClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaExibirClientes.Designer.cs">
+      <DependentUpon>TelaExibirClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaExtrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaExtrato.Designer.cs">
+      <DependentUpon>TelaExtrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaPagamento.Designer.cs">
+      <DependentUpon>TelaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaPoupanca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaPoupanca.Designer.cs">
+      <DependentUpon>TelaPoupanca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaTranferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaTranferencia.Designer.cs">
+      <DependentUpon>TelaTranferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaCadastroCliente.Designer.cs">
+      <DependentUpon>TelaCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaLog.Designer.cs">
+      <DependentUpon>TelaLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaLogin.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelaSaque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaSaque.Designer.cs">
+      <DependentUpon>TelaSaque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaSelecao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaSelecao.Designer.cs">
+      <DependentUpon>TelaSelecao.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TelaAlterarConta.resx">
+      <DependentUpon>TelaAlterarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaAlterarFuncionario.resx">
+      <DependentUpon>TelaAlterarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaBoleto.resx">
+      <DependentUpon>TelaBoleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaDeposito.resx">
+      <DependentUpon>TelaDeposito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaExibirClientes.resx">
+      <DependentUpon>TelaExibirClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaExtrato.resx">
+      <DependentUpon>TelaExtrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaPagamento.resx">
+      <DependentUpon>TelaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaPoupanca.resx">
+      <DependentUpon>TelaPoupanca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaSaque.resx">
+      <DependentUpon>TelaSaque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaTranferencia.resx">
+      <DependentUpon>TelaTranferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaCadastroCliente.resx">
+      <DependentUpon>TelaCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaLog.resx">
+      <DependentUpon>TelaLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TelaSelecao.resx">
+      <DependentUpon>TelaSelecao.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
